@@ -44,6 +44,9 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)done {
+    
+    NSLog(@"Contents of the text field %@",self.textField);
+
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -10,6 +10,9 @@
 
 @interface AddItemViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+
 -(IBAction) cancel;
 -(IBAction) done;
 @end
