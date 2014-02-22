@@ -4,24 +4,24 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Checklists View Controller - Checklists-->
+        <!--Checklist View Controller - Checklists-->
         <scene sceneID="dDk-pQ-pyQ">
             <objects>
-                <tableViewController id="bCp-ME-P4g" customClass="ChecklistsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eyr-Q6-5yZ">
+                <tableViewController id="bCp-ME-P4g" customClass="ChecklistViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eyr-Q6-5yZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChecklistItem" id="09Y-2G-34w">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChecklistItem" rowHeight="46" id="09Y-2G-34w">
+                                <rect key="frame" x="0.0" y="86" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="09Y-2G-34w" id="7EX-ry-r2i">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-Ge-GUi">
-                                            <rect key="frame" x="59" y="11" width="241" height="21"/>
+                                            <rect key="frame" x="33" y="11" width="241" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -55,7 +55,20 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTP-hb-3Gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="59"/>
+            <point key="canvasLocation" x="1531" y="5"/>
+        </scene>
+        <!--All Lists View Controller - Checklists-->
+        <scene sceneID="4MM-vt-8Cc">
+            <objects>
+                <tableViewController id="BIi-OY-wnu" customClass="AllListsViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Checklists" id="IHR-xx-tLb"/>
+                    <connections>
+                        <segue destination="bCp-ME-P4g" kind="push" identifier="ShowChecklist" id="lC9-gM-X8u"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucl-0o-zaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="-665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mAL-er-CA5">
@@ -68,7 +81,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bCp-ME-P4g" kind="relationship" relationship="rootViewController" id="sgg-dF-UHU"/>
+                        <segue destination="BIi-OY-wnu" kind="relationship" relationship="rootViewController" id="NdE-Ml-dHw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCW-16-QVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,7 +145,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R99-n7-BqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="59"/>
+            <point key="canvasLocation" x="2704" y="13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uFS-sp-9HF">
@@ -154,7 +167,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lop-7j-UOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="59"/>
+            <point key="canvasLocation" x="2110" y="5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

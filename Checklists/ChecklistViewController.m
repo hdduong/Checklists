@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 m3hcoril. All rights reserved.
 //
 
-#import "ChecklistsViewController.h"
+#import "ChecklistViewController.h"
 #import "ChecklistsItem.h"
 
-@interface ChecklistsViewController ()
+@interface ChecklistViewController ()
 
 
 @end
 
-@implementation ChecklistsViewController
+@implementation ChecklistViewController
 
 NSMutableArray *_items;
 
@@ -51,10 +51,10 @@ NSMutableArray *_items;
     item.text = @"Eat ice cream";
     item.checked = YES;
     [_items addObject:item];
-    
+    */
     NSLog(@"Documents folder is %@", [self documentsDirectory]);
     NSLog(@"Data file path is %@", [self dataFilePath]);
-     */
+     
 }
 
 - (void)didReceiveMemoryWarning
