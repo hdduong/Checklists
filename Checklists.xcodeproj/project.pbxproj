@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC164C9A18B46B75008F5B3A /* ChecklistsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC164C9918B46B75008F5B3A /* ChecklistsItem.m */; };
 		DC25545F18B40047007A0040 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC25545E18B40047007A0040 /* Foundation.framework */; };
 		DC25546118B40047007A0040 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC25546018B40047007A0040 /* CoreGraphics.framework */; };
 		DC25546318B40047007A0040 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC25546218B40047007A0040 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC164C9818B46B75008F5B3A /* ChecklistsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistsItem.h; sourceTree = "<group>"; };
+		DC164C9918B46B75008F5B3A /* ChecklistsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistsItem.m; sourceTree = "<group>"; };
 		DC25545B18B40047007A0040 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC25545E18B40047007A0040 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC25546018B40047007A0040 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				DC25546D18B40047007A0040 /* ChecklistsAppDelegate.h */,
 				DC25546E18B40047007A0040 /* ChecklistsAppDelegate.m */,
 				DC25547018B40047007A0040 /* Main.storyboard */,
+				DC164C9818B46B75008F5B3A /* ChecklistsItem.h */,
+				DC164C9918B46B75008F5B3A /* ChecklistsItem.m */,
 				DC25547318B40047007A0040 /* ChecklistsViewController.h */,
 				DC25547418B40047007A0040 /* ChecklistsViewController.m */,
 				DC25547618B40047007A0040 /* Images.xcassets */,
@@ -256,6 +261,7 @@
 				DC25546B18B40047007A0040 /* main.m in Sources */,
 				DC25546F18B40047007A0040 /* ChecklistsAppDelegate.m in Sources */,
 				DC25547518B40047007A0040 /* ChecklistsViewController.m in Sources */,
+				DC164C9A18B46B75008F5B3A /* ChecklistsItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
