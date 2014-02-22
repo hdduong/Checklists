@@ -38,8 +38,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="Loa-9V-mtF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B7V-HV-6qG">
                             <connections>
-                                <action selector="addItem" destination="bCp-ME-P4g" id="psE-xX-z9d"/>
-                                <segue destination="dDa-TV-otr" kind="modal" id="eiH-hT-H0a"/>
+                                <segue destination="dDa-TV-otr" kind="modal" identifier="AddItem" id="eiH-hT-H0a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,11 +83,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSx-vj-pdB">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSx-vj-pdB">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="oUc-d4-P7U" id="5c4-HE-Fma"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -107,13 +109,14 @@
                                 <action selector="cancel" destination="oUc-d4-P7U" id="1fg-3B-K0D"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="Dw0-ja-2x7">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" systemItem="done" id="Dw0-ja-2x7">
                             <connections>
                                 <action selector="done" destination="oUc-d4-P7U" id="xal-b3-pKI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="Dw0-ja-2x7" id="XCu-7U-fau"/>
                         <outlet property="textField" destination="LSx-vj-pdB" id="iSq-i9-JPN"/>
                     </connections>
                 </tableViewController>
