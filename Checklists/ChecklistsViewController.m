@@ -23,8 +23,8 @@ NSMutableArray *_items;
 {
     [super viewDidLoad];
    
-    _items = [[NSMutableArray alloc] initWithCapacity:20];
-    
+    //_items = [[NSMutableArray alloc] initWithCapacity:20];
+    /*
     ChecklistsItem *item;
     
     item = [[ChecklistsItem alloc] init];
@@ -51,6 +51,10 @@ NSMutableArray *_items;
     item.text = @"Eat ice cream";
     item.checked = YES;
     [_items addObject:item];
+    
+    NSLog(@"Documents folder is %@", [self documentsDirectory]);
+    NSLog(@"Data file path is %@", [self dataFilePath]);
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +90,8 @@ NSMutableArray *_items;
     [self configureCheckmarkForCell:cell withChecklistItem:item];
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self saveChecklistItems];
 }
 
 -(void) configureCheckmarkForCell:(UITableViewCell*) cell withChecklistItem:(ChecklistsItem*) item {
@@ -115,6 +121,7 @@ NSMutableArray *_items;
     NSArray *indexPaths = @[indexPath];
     [tableView deleteRowsAtIndexPaths:indexPaths
                                        withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self saveChecklistItems];
 
 }
 
@@ -134,6 +141,8 @@ NSMutableArray *_items;
     NSArray *indexPaths = @[indexPath]; [self.tableView insertRowsAtIndexPaths:indexPaths
                                                               withRowAnimation:UITableViewRowAnimationAutomatic];
     
+    [self saveChecklistItems];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -147,6 +156,7 @@ NSMutableArray *_items;
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
     [self configureTextForCell:cell withChecklistItem:item];
+    [self saveChecklistItems];
     [self dismissViewControllerAnimated:YES completion:nil];
                              
 }
@@ -171,8 +181,53 @@ NSMutableArray *_items;
         controller.itemToEdit = _items[indexPath.row];
     }
 }
+- (NSString *)documentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [paths firstObject];
+    
+    return documentsDirectory;
+}
+- (NSString *)dataFilePath {
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Checklists.plist"];
+}
 
 
+
+- (void)saveChecklistItems {
+    NSMutableData *data = [[NSMutableData alloc] init];
+    
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    
+    [archiver encodeObject:_items forKey:@"ChecklistsItem"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];
+
+}
+
+- (void)loadChecklistItems {
+    
+    NSString *path = [self dataFilePath];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]
+                   initForReadingWithData:data];
+        
+        _items = [unarchiver decodeObjectForKey:@"ChecklistsItem"];
+        [unarchiver finishDecoding];
+    } else {
+        _items = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
+
+-(id)initWithCoder:(NSCoder*) aCoder {
+    
+    if ((self = [super initWithCoder:aCoder])) {
+        [self loadChecklistItems];
+    }
+    return self;
+}
 @end
 
 
