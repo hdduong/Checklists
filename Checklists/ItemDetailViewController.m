@@ -1,19 +1,19 @@
 //
-//  AddItemViewController.m
+//  ItemDetailViewController.m
 //  Checklists
 //
 //  Created by Duong Duc Hien on 2/21/14.
 //  Copyright (c) 2014 m3hcoril. All rights reserved.
 //
 
-#import "AddItemViewController.h"
+#import "ItemDetailViewController.h"
 #import "ChecklistsItem.h"
 
-@interface AddItemViewController ()
+@interface ItemDetailViewController ()
 
 @end
 
-@implementation AddItemViewController
+@implementation ItemDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,11 +28,13 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    if (self.itemToEdit != nil) {
+        self.title = @"Edit Item";
+        self.textField.text = self.itemToEdit.text;
+        self.doneBarButton.enabled = YES;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +45,7 @@
 
 - (IBAction)cancel {
     //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [self.delegate addItemViewControllerDidCancel:self];
+    [self.delegate itemDetailViewControllerDidCancel:self];
 }
 
 - (IBAction)done {
@@ -52,11 +54,18 @@
 
     //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
-    ChecklistsItem *item = [[ChecklistsItem alloc] init];
-    item.text = self.textField.text;
-    item.checked = NO;
+    if (self.itemToEdit == nil) {
+        ChecklistsItem *item = [[ChecklistsItem alloc] init];
+        item.text = self.textField.text;
+        item.checked = NO;
     
-    [self.delegate addItemViewController: self didFinishAddingItem:item];
+        [self.delegate itemDetailViewController: self didFinishAddingItem:item];
+    } else {
+        self.itemToEdit.text = self.textField.text;
+        //self.itemToEdit.text = @"This is edited item";
+        
+        [self.delegate itemDetailViewController:self didFinishEditingItem:self.itemToEdit]; //same reference item. Change here means change the reuturn
+    }
 }
 
 
