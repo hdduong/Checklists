@@ -22,6 +22,7 @@
 		DC25548018B40047007A0040 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC25546218B40047007A0040 /* UIKit.framework */; };
 		DC25548818B40047007A0040 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC25548618B40047007A0040 /* InfoPlist.strings */; };
 		DC25548A18B40047007A0040 /* ChecklistsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC25548918B40047007A0040 /* ChecklistsTests.m */; };
+		DCE53BB418B86E410046D433 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE53BB318B86E410046D433 /* AddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		DC25548518B40047007A0040 /* ChecklistsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChecklistsTests-Info.plist"; sourceTree = "<group>"; };
 		DC25548718B40047007A0040 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC25548918B40047007A0040 /* ChecklistsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsTests.m; sourceTree = "<group>"; };
+		DCE53BB218B86E410046D433 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		DCE53BB318B86E410046D433 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 		DC25546418B40047007A0040 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				DCE53BB218B86E410046D433 /* AddItemViewController.h */,
+				DCE53BB318B86E410046D433 /* AddItemViewController.m */,
 				DC25546D18B40047007A0040 /* ChecklistsAppDelegate.h */,
 				DC25546E18B40047007A0040 /* ChecklistsAppDelegate.m */,
 				DC25547018B40047007A0040 /* Main.storyboard */,
@@ -261,6 +266,7 @@
 				DC25546B18B40047007A0040 /* main.m in Sources */,
 				DC25546F18B40047007A0040 /* ChecklistsAppDelegate.m in Sources */,
 				DC25547518B40047007A0040 /* ChecklistsViewController.m in Sources */,
+				DCE53BB418B86E410046D433 /* AddItemViewController.m in Sources */,
 				DC164C9A18B46B75008F5B3A /* ChecklistsItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
