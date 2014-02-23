@@ -15,10 +15,10 @@
 
 @end
 
-@implementation ChecklistViewController
+@implementation ChecklistViewController {
 
-NSMutableArray *_items;
-
+    NSMutableArray *_items;
+}
 
 - (void)viewDidLoad
 {
