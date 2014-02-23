@@ -8,6 +8,7 @@
 
 #import "ChecklistViewController.h"
 #import "ChecklistsItem.h"
+#import "Checklist.h"
 
 @interface ChecklistViewController ()
 
@@ -22,39 +23,8 @@ NSMutableArray *_items;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    //_items = [[NSMutableArray alloc] initWithCapacity:20];
-    /*
-    ChecklistsItem *item;
+    self.title = self.checklist.name;
     
-    item = [[ChecklistsItem alloc] init];
-    item.text = @"Walk the dog";
-    item.checked = NO;
-    [_items addObject:item];
-    
-    item = [[ChecklistsItem alloc] init];
-    item.text = @"Brush my teeth";
-    item.checked = YES;
-    [_items addObject:item];
-    
-    item = [[ChecklistsItem alloc] init];
-    item.text = @"Learn iOS development";
-    item.checked = YES;
-    [_items addObject:item];
-    
-    item = [[ChecklistsItem alloc] init];
-    item.text = @"Soccer practice";
-    item.checked = NO;
-    [_items addObject:item];
-    
-    item = [[ChecklistsItem alloc] init];
-    item.text = @"Eat ice cream";
-    item.checked = YES;
-    [_items addObject:item];
-    */
-    NSLog(@"Documents folder is %@", [self documentsDirectory]);
-    NSLog(@"Data file path is %@", [self dataFilePath]);
-     
 }
 
 - (void)didReceiveMemoryWarning
